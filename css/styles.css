@@ -5,9 +5,65 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
+body {
+    padding: 0;
+    margin: 0;
+}
+main {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+.form-section {
+    font-family: 'Didact Gothic', sans-serif;
+    width: 100%;
+}
 #cotizador {
     font-family: 'Didact Gothic', sans-serif;
+    background-color: #eaeff3;
+    padding: 12px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-div {
+    width: 40%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.form-div div {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
 }
 #cotizador input {
     font-family: 'Didact Gothic', sans-serif;
+    border: none;
+    padding: 8px;
+    border-radius: 68px;
+    width: 100%;
+}
+#cotizador select {
+    border: none;
+    padding: 8px;
+    border-radius: 68px;
+    font-family: 'Didact Gothic', sans-serif;
+    width: 46%;
+}
+#receive-amount {
+    background-color: #cfd9de;
+}
+#cotizador label {
+    margin-bottom: 12px;
 }
