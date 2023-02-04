@@ -1,0 +1,13 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Didact Gothic', sans-serif;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+#cotizador {
+    font-family: 'Didact Gothic', sans-serif;
+}
+#cotizador input {
+    font-family: 'Didact Gothic', sans-serif;
+}
