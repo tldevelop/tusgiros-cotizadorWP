@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="./css/styles.css">
     <title>tusgiros cotizador</title>
 </head>
@@ -25,8 +26,12 @@
                         >
                     </div>
                     <select name="region" id="origin-region">
-                        <option value="UYU">UYU</option>
+                        <option value="UYU" selected>UYU</option>
+                        <option value="USD">USD</option>
                     </select>
+                </div>
+                <div class="form-arrows">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
                 </div>
                 <div class="form-div">
                     <div>
@@ -40,7 +45,9 @@
                         >
                     </div>
                     <select name="dest-region" id="dest-region">
-                        <option value="ARS">ARS</option>
+                        <option value="ARS" selected>ARS</option>
+                        <option value="VEF">VEF</option>
+                        <option value="COP">COP</option>
                     </select>
                 </div>
             </form>
