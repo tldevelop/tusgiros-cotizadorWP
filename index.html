@@ -16,7 +16,7 @@
         <div class="form-section">
             <form id="cotizador">
                 <div class="form-div">
-                    
+
                     <div>
                         <label for="monto-enviar">Monto a enviar</label>
                         <input 
@@ -49,6 +49,7 @@
                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
                 </div>
                 <div class="form-div">
+
                     <div>
                         <label for="monto-destino">Recibirán en destino</label>
                         <input 
@@ -59,11 +60,27 @@
                             disabled
                         >
                     </div>
+
                     <button id="dest-region" type="button">
                         <p id="dest-text"></p>
                         <div id="dest-flag"></div>
                         <i class="fas fa-chevron-down" id="desti"></i>
                     </button>
+
+                    <div id="dest-selector">
+                        <button type="button" id="select-ars">
+                            <p>ARS</p>
+                            <div></div>
+                        </button>
+                        <button type="button" id="select-vef">
+                            <p>VEF</p>
+                            <div></div>
+                        </button>
+                        <button type="button" id="select-cop">
+                            <p>COP</p>
+                            <div></div>
+                        </button>
+                    </div>
                 </div>
             </form>
             <div class="today">

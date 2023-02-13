@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const originSel = document.querySelector('#origin-selector');
     const selUYU = document.querySelector('#select-uyu');
     const selUSD = document.querySelector('#select-usd');
+
+    const destSel = document.querySelector('#dest-selector');
+    const selARS = document.querySelector('#select-ars');
+    const selVEF = document.querySelector('#select-vef');
+    const selCOP = document.querySelector('#select-cop');
     // END FORM FIELDS
 
     //TODAY VALUE SELECTORS
@@ -120,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
     destFlag.style.backgroundImage = `url(${flags.ar})`
 
     apiData.filter(el => {
-        if(el.moneda_origen === status.origin.text || el.moneda_destino === status.destiny.text) {
+        if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
             conversion.innerHTML = el.valor;
             sendAmount.oninput = () => {
                 const total = sendAmount.value * el.valor;
@@ -146,8 +151,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if(status.destiny.clicked) {
             destinyIcon.style.transform = "translateY(-50%) rotate(180deg)"
+            destSel.style.display = "initial"
         } else {
             destinyIcon.style.transform = "translateY(-50%) rotate(0deg)"
+            destSel.style.display = "none"
         }
     }
 
@@ -160,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
         originIcon.style.transform = "translateY(-50%) rotate(0deg)";
         originSel.style.display = "none"
         apiData.filter(el => {
-            if(el.moneda_origen === status.origin.text || el.moneda_destino === status.destiny.text) {
+            if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
                 conversion.innerHTML = el.valor;
                 sendAmount.oninput = () => {
                     const total = sendAmount.value * el.valor;
@@ -178,7 +185,62 @@ document.addEventListener('DOMContentLoaded', function () {
         originIcon.style.transform = "translateY(-50%) rotate(0deg)";
         originSel.style.display = "none"
         apiData.filter(el => {
-            if(el.moneda_origen === status.origin.text || el.moneda_destino === status.destiny.text) {
+            if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
+                conversion.innerHTML = el.valor;
+                sendAmount.oninput = () => {
+                    const total = sendAmount.value * el.valor;
+                    receiveAmount.value = total;
+                }
+            }
+        })
+    }
+
+    selARS.onclick = () => {
+        status.destiny.text = "ARS";
+        destText.innerHTML = status.destiny.text
+        destFlag.style.backgroundImage = `url(${flags.ar})`
+        destinyCurrency.innerHTML = status.destiny.text;
+        status.destiny.clicked = false;
+        destinyIcon.style.transform = "translateY(-50%) rotate(0deg)";
+        destSel.style.display = "none"
+        apiData.filter(el => {
+            if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
+                conversion.innerHTML = el.valor;
+                sendAmount.oninput = () => {
+                    const total = sendAmount.value * el.valor;
+                    receiveAmount.value = total;
+                }
+            }
+        })
+    }
+    selVEF.onclick = () => {
+        status.destiny.text = "VEF";
+        destText.innerHTML = status.destiny.text
+        destFlag.style.backgroundImage = `url(${flags.ven})`
+        destinyCurrency.innerHTML = status.destiny.text;
+        status.destiny.clicked = false;
+        destinyIcon.style.transform = "translateY(-50%) rotate(0deg)";
+        destSel.style.display = "none"
+        apiData.filter(el => {
+            if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
+                conversion.innerHTML = el.valor;
+                sendAmount.oninput = () => {
+                    const total = sendAmount.value * el.valor;
+                    receiveAmount.value = total;
+                }
+            }
+        })
+    }
+    selCOP.onclick = () => {
+        status.destiny.text = "COP";
+        destText.innerHTML = status.destiny.text
+        destFlag.style.backgroundImage = `url(${flags.col})`
+        destinyCurrency.innerHTML = status.destiny.text;
+        status.destiny.clicked = false;
+        destinyIcon.style.transform = "translateY(-50%) rotate(0deg)";
+        destSel.style.display = "none"
+        apiData.filter(el => {
+            if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
                 conversion.innerHTML = el.valor;
                 sendAmount.oninput = () => {
                     const total = sendAmount.value * el.valor;
