@@ -16,6 +16,7 @@
         <div class="form-section">
             <form id="cotizador">
                 <div class="form-div">
+                    
                     <div>
                         <label for="monto-enviar">Monto a enviar</label>
                         <input 
@@ -25,10 +26,24 @@
                             id="send-amount"
                         >
                     </div>
-                    <select name="region" id="origin-region">
-                        <option value="UYU" selected>UYU</option>
-                        <option value="USD">USD</option>
-                    </select>
+
+                    <button id="origin-region" type="button">
+                        <p id="origin-text"></p>
+                        <div id="origin-flag"></div>
+                        <i class="fas fa-chevron-down" id="origi"></i>
+                    </button>
+
+                    <div id="origin-selector">
+                        <button type="button" id="select-uyu">
+                            <p>UYU</p>
+                            <div></div>
+                        </button>
+                        <button type="button" id="select-usd">
+                            <p>USD</p>
+                            <div></div>
+                        </button>
+                    </div>
+
                 </div>
                 <div class="form-arrows">
                     <i class="fa-solid fa-arrow-right-arrow-left"></i>
@@ -44,11 +59,11 @@
                             disabled
                         >
                     </div>
-                    <select name="dest-region" id="dest-region">
-                        <option value="ARS" selected>ARS</option>
-                        <option value="VEF">VEF</option>
-                        <option value="COP">COP</option>
-                    </select>
+                    <button id="dest-region" type="button">
+                        <p id="dest-text"></p>
+                        <div id="dest-flag"></div>
+                        <i class="fas fa-chevron-down" id="desti"></i>
+                    </button>
                 </div>
             </form>
             <div class="today">
@@ -59,6 +74,6 @@
         </div>
     </main>
 
-    <script src="./js/main.js" type="text/javascript"></script>
+    <script src="./js/buttonFlags.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,0 +1,65 @@
+[
+    {
+        "pais_origen": "Uruguay",
+        "moneda_origen": "USD",
+        "pais_destino": "Venezuela",
+        "moneda_destino": "USD",
+        "valor": 0.93
+    },
+    {
+        "pais_origen": "Ecuador",
+        "moneda_origen": "USD",
+        "pais_destino": "Venezuela",
+        "moneda_destino": "USD",
+        "valor": 0.93
+    },
+    {
+        "pais_origen": "Uruguay",
+        "moneda_origen": "UYU",
+        "pais_destino": "Venezuela",
+        "moneda_destino": "VEF",
+        "valor": 0.13
+    },
+    {
+        "pais_origen": "Uruguay",
+        "moneda_origen": "USD",
+        "pais_destino": "Venezuela",
+        "moneda_destino": "VEF",
+        "valor": 5.2
+    },
+    {
+        "pais_origen": "Ecuador",
+        "moneda_origen": "USD",
+        "pais_destino": "Colombia",
+        "moneda_destino": "COP",
+        "valor": 3752.0
+    },
+    {
+        "pais_origen": "Uruguay",
+        "moneda_origen": "UYU",
+        "pais_destino": "Argentina",
+        "moneda_destino": "ARS",
+        "valor": 0.01
+    },
+    {
+        "pais_origen": "Uruguay",
+        "moneda_origen": "USD",
+        "pais_destino": "Argentina",
+        "moneda_destino": "ARS",
+        "valor": 0.48
+    },
+    {
+        "pais_origen": "Uruguay",
+        "moneda_origen": "UYU",
+        "pais_destino": "Venezuela",
+        "moneda_destino": "USD",
+        "valor": 0.025
+    },
+    {
+        "pais_origen": "Ecuador",
+        "moneda_origen": "USD",
+        "pais_destino": "Venezuela",
+        "moneda_destino": "VEF",
+        "valor": 5.09
+    }
+]

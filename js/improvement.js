@@ -13,21 +13,18 @@ document.addEventListener('DOMContentLoaded', function () {
     //END TODAY VALUE SELECTORS
 
     //SHOW MORE TEAM MEMBERS
-    /*
     const hiddenMembers = document.querySelector('#equipoescondido');
     const hiddenMembers2 = document.querySelector('#equipoescondido2');
     const hiddenMembers3 = document.querySelector('#equipoescondido3');
     const showButton = document.querySelector('#mas-equipo');
-    */
 
     //SET INITIAL TODAY VALUES
     originCurrency.innerHTML = originRegion.value;
     destinyCurrency.innerHTML = destinyRegion.value;
 
     //FETCH AND SET DATA
-    /*
     const getData = async () => {
-        const url = './data.json';
+        const url = './data.js';
 
         await fetch(url)
         .then(res => res.json())
@@ -72,10 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     getData();
-    */
-
-
-    /*showButton.onclick = (e) => {
+    
+    showButton.onclick = (e) => {
         e.preventDefault();
         
         hiddenMembers.style.opacity = "1";
@@ -89,5 +84,4 @@ document.addEventListener('DOMContentLoaded', function () {
         
         showButton.style.display = "none"
     }
-    */
 });

@@ -22,6 +22,7 @@ input::-webkit-inner-spin-button {
 }
 input[type=number]{
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 .form-section {
     font-family: 'Didact Gothic', sans-serif;
@@ -41,6 +42,7 @@ input[type=number]{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    position: relative;
 }
 .form-arrows {
     width: 20%;
@@ -60,12 +62,35 @@ input[type=number]{
     border-radius: 68px;
     width: 100%;
 }
-#cotizador select {
+#cotizador button {
     border: none;
     padding: 8px;
     border-radius: 68px;
     font-family: 'Didact Gothic', sans-serif;
     width: 48%;
+    background-color: #fff;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+#cotizador button p {
+    margin: 0;
+}
+#cotizador button div {
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+}
+#cotizador button i {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
 }
 #receive-amount {
     background-color: #cfd9de;
@@ -79,4 +104,38 @@ input[type=number]{
     align-items: center;
     justify-content: center;
     margin-top: 12px;
+}
+#origin-selector {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    bottom: -100px;
+    right: 0px;
+    background-color: #fff;
+    padding: 12px 8px;
+    border-radius: 12px;
+    box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.2);
+}
+#origin-selector button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+#origin-selector button div {
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat
+}
+#origin-selector button p {
+    margin: 0;
+}
+#select-uyu div {
+    background-image: url('https://tusgiros.io/wp-content/uploads/2023/02/uruguay.png');
+}
+#select-usd div {
+    background-image: url('https://tusgiros.io/wp-content/uploads/2023/02/estados-unidos.png');
 }
