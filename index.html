@@ -16,6 +16,25 @@
         <div class="form-section">
             <form id="cotizador">
                 <div class="form-div">
+                    <div>
+                        <label for="pais-origen">País origen</label>
+                        <button id="country" type="button">
+                            <p id="country-text"></p>
+                            <div id="country-flag"></div>
+                            <i class="fas fa-chevron-down" id="pais"></i>
+                        </button>
+                    </div>
+
+                    <div id="country-selector">
+                        <button type="button" id="select-uru">
+                            <p>Uruguay</p>
+                            <div></div>
+                        </button>
+                        <button type="button" id="select-ecu">
+                            <p>Ecuador</p>
+                            <div></div>
+                        </button>
+                    </div>
 
                     <div>
                         <label for="monto-enviar">Monto a enviar</label>
@@ -50,7 +69,7 @@
                 </div>
                 <div class="form-div">
 
-                    <div>
+                    <div class="sub-div">
                         <label for="monto-destino">Recibirán en destino</label>
                         <input 
                             type="number"
@@ -91,6 +110,6 @@
         </div>
     </main>
 
-    <script src="./js/buttonFlags.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
 </body>
 </html>

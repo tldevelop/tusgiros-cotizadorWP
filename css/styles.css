@@ -10,7 +10,7 @@ body {
     margin: 0;
 }
 main {
-    width: 60%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +38,7 @@ input[type=number]{
     justify-content: space-between;
 }
 .form-div {
-    width: 40%;
+    width: 48%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -49,6 +49,18 @@ input[type=number]{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.form-div:first-of-type div button {
+    width: 100% !important;
+}
+.form-div:first-of-type div button p {
+    margin: 0;
+}
+.form-div:first-of-type div {
+    width: 32%;
+}
+.form-div:first-of-type button {
+    width: 32% !important;
 }
 .form-div div {
     display: flex;
@@ -105,6 +117,19 @@ input[type=number]{
     justify-content: center;
     margin-top: 12px;
 }
+#country-selector {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    bottom: -100px;
+    left: 0px;
+    background-color: #fff;
+    padding: 12px 8px;
+    border-radius: 12px;
+    box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.2);
+}
 #origin-selector,
 #dest-selector {
     display: none;
@@ -151,4 +176,52 @@ input[type=number]{
 }
 #select-cop div {
     background-image: url('https://tusgiros.io/wp-content/uploads/2023/02/colombia.png');
+}
+
+#select-uru div {
+    background-image: url('https://tusgiros.io/wp-content/uploads/2023/02/uruguay.png');
+}
+#select-ecu div {
+    background-image: url('https://tusgiros.io/wp-content/uploads/2023/02/ecuador.png');
+}
+@media (max-width: 893px) {
+    #cotizador {
+        flex-direction: column;
+    }
+    .form-div {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .form-div div {
+        width: 100% !important;
+        margin-top: 24px;
+    }
+    .form-div button {
+        width: 100% !important;
+        margin-top: 24px;
+    }
+    .form-div:first-of-type button {
+        width: 100% !important;
+    }
+    button {
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+    button div {
+        margin: 0 0 0 12px !important;
+        background-position: left center !important;
+    }
+    .form-arrows {
+        margin-top: 24px;
+    }
+    #country-selector {
+        bottom: -3px;
+    }
+    #origin-selector {
+        bottom: -152px;
+    }
+    #dest-selector {
+        bottom: -214px;
+    }
 }

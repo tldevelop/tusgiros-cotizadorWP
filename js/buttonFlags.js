@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const receiveAmount = document.querySelector('#receive-amount');
     const destinyRegion = document.querySelector('#dest-region');
 
+    const countrySel = document.querySelector('#country-selector');
+    const selUru = document.querySelector('#select-uru');
+    const selEcu = document.querySelector('#select-ecu');
+
     const originSel = document.querySelector('#origin-selector');
     const selUYU = document.querySelector('#select-uyu');
     const selUSD = document.querySelector('#select-usd');
@@ -16,6 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // END FORM FIELDS
 
     //TODAY VALUE SELECTORS
+    const country = document.querySelector('#country');
+    const countryText = document.querySelector('#country-text');
+    const countryFlag = document.querySelector('#country-flag');
+    const countryIcon = document.querySelector('#pais');
+
     const originCurrency = document.querySelector('#origen');
     const originText = document.querySelector("#origin-text");
     const originFlag = document.querySelector("#origin-flag");
@@ -97,6 +106,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //DEFINE STATUS OBJECT
     const status = {
+        country: {
+            text: "Uruguay",
+            clicked: false
+        },
         origin: {
             text: "UYU",
             clicked: false
@@ -113,10 +126,13 @@ document.addEventListener('DOMContentLoaded', function () {
         ar: "https://tusgiros.io/wp-content/uploads/2023/02/argentina.png",
         usa: "https://tusgiros.io/wp-content/uploads/2023/02/estados-unidos.png",
         ven: "https://tusgiros.io/wp-content/uploads/2023/02/venezuela.png",
-        col: "https://tusgiros.io/wp-content/uploads/2023/02/colombia.png"
+        col: "https://tusgiros.io/wp-content/uploads/2023/02/colombia.png",
+        ecu: "https://tusgiros.io/wp-content/uploads/2023/02/ecuador.png"
     }
 
     //SET INITIAL TODAY VALUES
+    countryText.innerHTML = status.country.text
+    countryFlag.style.backgroundImage = `url(${flags.uyu})`
     originText.innerHTML = status.origin.text;
     destText.innerHTML = status.destiny.text;
     originCurrency.innerHTML = status.origin.text;
@@ -135,6 +151,36 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     //functions
+    country.onclick = () => {
+        status.country.clicked = !status.country.clicked
+
+        if(status.country.clicked) {
+            countryIcon.style.transform = "translateY(-50%) rotate(180deg)";
+            countrySel.style.display="initial"
+        } else {
+            countryIcon.style.transform = "translateY(-50%) rotate(0deg)";
+            countrySel.style.display="none"
+        }
+    }
+
+    selUru.onclick = () => {
+        status.country.text = "Uruguay";
+        countryText.innerHTML = status.country.text;
+        countryFlag.style.backgroundImage = `url(${flags.uyu})`;
+        status.country.clicked = false;
+        countryIcon.style.transform = "translateY(-50%) rotate(0deg)";
+        countrySel.style.display = "none"
+    }
+
+    selEcu.onclick = () => {
+        status.country.text = "Ecuador";
+        countryText.innerHTML = status.country.text;
+        countryFlag.style.backgroundImage = `url(${flags.ecu})`;
+        status.country.clicked = false;
+        countryIcon.style.transform = "translateY(-50%) rotate(0deg)";
+        countrySel.style.display = "none"
+    }
+
     originRegion.onclick = () => {
         status.origin.clicked = !status.origin.clicked;
 
@@ -146,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
             originSel.style.display = "none"
         }
     }
+
     destinyRegion.onclick = () => {
         status.destiny.clicked = !status.destiny.clicked;
 
@@ -248,5 +295,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         })
+    }
+
+    document.onclick = (e) => {
+        if(!countrySel.contains(e.target) && !country.contains(e.target)){
+            status.country.clicked = false;
+            //console.log(status.country.clicked);
+        }
+        if(status.country.clicked) {
+            countryIcon.style.transform = "translateY(-50%) rotate(180deg)";
+            countrySel.style.display="initial"
+        } else {
+            countryIcon.style.transform = "translateY(-50%) rotate(0deg)";
+            countrySel.style.display="none"
+        }
+
+        if(!originSel.contains(e.target) && !originRegion.contains(e.target)){
+            status.origin.clicked = false;
+            //console.log(status.origin.clicked);
+        }
+        if(status.origin.clicked) {
+            originIcon.style.transform = "translateY(-50%) rotate(180deg)";
+            originSel.style.display="initial"
+        } else {
+            originIcon.style.transform = "translateY(-50%) rotate(0deg)";
+            originSel.style.display="none"
+        }
+
+        if(!destSel.contains(e.target) && !destinyRegion.contains(e.target)){
+            status.destiny.clicked = false;
+            //console.log(status.destiny.clicked);
+        }
+        if(status.destiny.clicked) {
+            destinyIcon.style.transform = "translateY(-50%) rotate(180deg)";
+            destSel.style.display="initial"
+        } else {
+            destinyIcon.style.transform = "translateY(-50%) rotate(0deg)";
+            destSel.style.display="none"
+        }
     }
 });
