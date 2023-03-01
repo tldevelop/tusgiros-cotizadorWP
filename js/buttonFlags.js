@@ -170,6 +170,24 @@ document.addEventListener('DOMContentLoaded', function () {
         status.country.clicked = false;
         countryIcon.style.transform = "translateY(-50%) rotate(0deg)";
         countrySel.style.display = "none"
+        selUYU.style.display = 'flex';
+        originSel.style.bottom = '-104px';
+        if(screen.width === 893) {
+            originSel.style.bottom = '-152px';
+        }
+        status.origin.text = 'UYU';
+        originText.innerHTML = status.origin.text;
+        originFlag.style.backgroundImage =`url(${flags.uyu})`;
+        originCurrency.innerHTML = status.origin.text;
+        apiData.filter(el => {
+            if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
+                conversion.innerHTML = el.valor;
+                sendAmount.oninput = () => {
+                    const total = sendAmount.value * el.valor;
+                    receiveAmount.value = total;
+                }
+            }
+        })
     }
 
     selEcu.onclick = () => {
@@ -179,6 +197,24 @@ document.addEventListener('DOMContentLoaded', function () {
         status.country.clicked = false;
         countryIcon.style.transform = "translateY(-50%) rotate(0deg)";
         countrySel.style.display = "none"
+        selUYU.style.display = 'none';
+        originSel.style.bottom = '-67px';
+        if(screen.width === 893) {
+            originSel.style.bottom = '-93px';
+        }
+        status.origin.text = 'USD';
+        originText.innerHTML = status.origin.text;
+        originFlag.style.backgroundImage =`url(${flags.usa})`;
+        originCurrency.innerHTML = status.origin.text;
+        apiData.filter(el => {
+            if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
+                conversion.innerHTML = el.valor;
+                sendAmount.oninput = () => {
+                    const total = sendAmount.value * el.valor;
+                    receiveAmount.value = total;
+                }
+            }
+        })
     }
 
     originRegion.onclick = () => {
@@ -257,6 +293,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     const total = sendAmount.value * el.valor;
                     receiveAmount.value = total;
                 }
+                const uptotal = sendAmount.value * el.valor;
+                receiveAmount.value = uptotal;
             }
         })
     }
@@ -275,6 +313,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     const total = sendAmount.value * el.valor;
                     receiveAmount.value = total;
                 }
+                const uptotal = sendAmount.value * el.valor;
+                receiveAmount.value = uptotal;
             }
         })
     }
@@ -293,6 +333,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     const total = sendAmount.value * el.valor;
                     receiveAmount.value = total;
                 }
+                const uptotal = sendAmount.value * el.valor;
+                receiveAmount.value = uptotal;
             }
         })
     }
