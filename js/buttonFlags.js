@@ -182,10 +182,8 @@ document.addEventListener('DOMContentLoaded', function () {
         apiData.filter(el => {
             if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
                 conversion.innerHTML = el.valor;
-                sendAmount.oninput = () => {
-                    const total = sendAmount.value * el.valor;
-                    receiveAmount.value = total;
-                }
+                const total = sendAmount.value * el.valor;
+                receiveAmount.value = total;
             }
         })
     }
@@ -209,10 +207,8 @@ document.addEventListener('DOMContentLoaded', function () {
         apiData.filter(el => {
             if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
                 conversion.innerHTML = el.valor;
-                sendAmount.oninput = () => {
-                    const total = sendAmount.value * el.valor;
-                    receiveAmount.value = total;
-                }
+                const ctotal = sendAmount.value * el.valor;
+                receiveAmount.value = ctotal;
             }
         })
     }
@@ -256,6 +252,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     const total = sendAmount.value * el.valor;
                     receiveAmount.value = total;
                 }
+                const total = sendAmount.value * el.valor;
+                receiveAmount.value = total;
             }
         })
     }
@@ -274,6 +272,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     const total = sendAmount.value * el.valor;
                     receiveAmount.value = total;
                 }
+                const total = sendAmount.value * el.valor;
+                receiveAmount.value = total;
             }
         })
     }

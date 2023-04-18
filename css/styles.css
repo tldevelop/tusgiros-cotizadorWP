@@ -70,7 +70,7 @@ input[type=number]{
 #cotizador input {
     font-family: 'Didact Gothic', sans-serif;
     border: none;
-    padding: 8px;
+    padding: 9px;
     border-radius: 68px;
     width: 100%;
 }
@@ -162,6 +162,11 @@ input[type=number]{
 #origin-selector button p {
     margin: 0;
 }
+#select-ars,
+#select-vef,
+#select-cop {
+    width: 100% !important;
+}
 #select-uyu div {
     background-image: url('https://tusgiros.io/wp-content/uploads/2023/02/uruguay.png');
 }
@@ -184,18 +189,34 @@ input[type=number]{
 #select-ecu div {
     background-image: url('https://tusgiros.io/wp-content/uploads/2023/02/ecuador.png');
 }
+@media (max-width: 943px) and (min-width: 894px) {
+    #dest-region {
+        width: 30% !important;
+    }
+    .sub-div {
+        width: 70% !important;
+    }
+    #dest-selector {
+        width: 30%;
+    }
+}
 @media (max-width: 893px) {
     #cotizador {
-        flex-direction: column;
+        flex-direction: column
     }
     .form-div {
         width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
     }
-    .form-div div {
-        width: 100% !important;
+    .form-div div:nth-child(1) {
+        width: 100%;
         margin-top: 24px;
+    }
+    .form-div div:nth-child(2) {
+        width: 50% !important;
     }
     .form-div button {
         width: 100% !important;
@@ -219,9 +240,28 @@ input[type=number]{
         bottom: -3px;
     }
     #origin-selector {
-        bottom: -152px;
+        bottom: -102px;
     }
     #dest-selector {
-        bottom: -214px;
+        bottom: -139px;
+    }
+    #country {
+        margin-bottom: 12px;
+    }
+    #country-selector {
+        width: 100%;
+        bottom: -72px;
+    }
+    .eldeenviar,
+    #origin-region,
+    .sub-div,
+    #dest-region,
+    #origin-selector,
+    #dest-selector {
+        width: 49% !important;
+    }
+    #origin-selector button,
+    #dest-selector button {
+        margin: 0px;
     }
 }
