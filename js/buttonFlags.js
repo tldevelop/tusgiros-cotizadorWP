@@ -139,6 +139,9 @@ document.addEventListener('DOMContentLoaded', function () {
     destinyCurrency.innerHTML = status.destiny.text;
     originFlag.style.backgroundImage = `url(${flags.uyu})`
     destFlag.style.backgroundImage = `url(${flags.ar})`
+    selVEF.style.display = "none";
+    selCOP.style.display = "none";
+    destSel.style.bottom = "-65px";
 
     apiData.filter(el => {
         if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
@@ -164,6 +167,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     selUru.onclick = () => {
+        selVEF.style.display = "none";
+        destSel.style.bottom = "-65px";
         status.country.text = "Uruguay";
         countryText.innerHTML = status.country.text;
         countryFlag.style.backgroundImage = `url(${flags.uyu})`;
@@ -189,6 +194,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     selEcu.onclick = () => {
+        selVEF.style.display = "flex";
+        destSel.style.bottom = "-102px";
         status.country.text = "Ecuador";
         countryText.innerHTML = status.country.text;
         countryFlag.style.backgroundImage = `url(${flags.ecu})`;
