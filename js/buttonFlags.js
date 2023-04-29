@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const selARS = document.querySelector('#select-ars');
     const selVEF = document.querySelector('#select-vef');
     const selCOP = document.querySelector('#select-cop');
+    const selUSVEF = document.querySelector('#select-usvef');
     // END FORM FIELDS
 
     //TODAY VALUE SELECTORS
@@ -141,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
     destFlag.style.backgroundImage = `url(${flags.ar})`
     selVEF.style.display = "none";
     selCOP.style.display = "none";
+    selUSVEF.style.display = "none";
     destSel.style.bottom = "-65px";
 
     apiData.filter(el => {
@@ -168,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     selUru.onclick = () => {
         selVEF.style.display = "none";
+        selUSVEF.style.display = "none";
         destSel.style.bottom = "-65px";
         status.country.text = "Uruguay";
         countryText.innerHTML = status.country.text;
@@ -181,7 +184,11 @@ document.addEventListener('DOMContentLoaded', function () {
             originSel.style.bottom = '-152px';
         }
         status.origin.text = 'UYU';
+        status.destiny.text = "ARS";
+        destText.innerHTML = status.destiny.text;
         originText.innerHTML = status.origin.text;
+        destFlag.style.backgroundImage = `url(${flags.ar})`
+        destinyCurrency.innerHTML = status.destiny.text;
         originFlag.style.backgroundImage =`url(${flags.uyu})`;
         originCurrency.innerHTML = status.origin.text;
         apiData.filter(el => {
@@ -195,7 +202,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     selEcu.onclick = () => {
         selVEF.style.display = "flex";
-        destSel.style.bottom = "-102px";
+        selUSVEF.style.display = "flex";
+        destSel.style.bottom = "-136px";
         status.country.text = "Ecuador";
         countryText.innerHTML = status.country.text;
         countryFlag.style.backgroundImage = `url(${flags.ecu})`;
@@ -329,6 +337,26 @@ document.addEventListener('DOMContentLoaded', function () {
         status.destiny.text = "COP";
         destText.innerHTML = status.destiny.text
         destFlag.style.backgroundImage = `url(${flags.col})`
+        destinyCurrency.innerHTML = status.destiny.text;
+        status.destiny.clicked = false;
+        destinyIcon.style.transform = "translateY(-50%) rotate(0deg)";
+        destSel.style.display = "none"
+        apiData.filter(el => {
+            if(el.moneda_origen === status.origin.text && el.moneda_destino === status.destiny.text) {
+                conversion.innerHTML = el.valor;
+                sendAmount.oninput = () => {
+                    const total = sendAmount.value * el.valor;
+                    receiveAmount.value = total;
+                }
+                const uptotal = sendAmount.value * el.valor;
+                receiveAmount.value = uptotal;
+            }
+        })
+    }
+    selUSVEF.onclick = () => {
+        status.destiny.text = "USD";
+        destText.innerHTML = status.destiny.text
+        destFlag.style.backgroundImage = `url(${flags.ven})`
         destinyCurrency.innerHTML = status.destiny.text;
         status.destiny.clicked = false;
         destinyIcon.style.transform = "translateY(-50%) rotate(0deg)";

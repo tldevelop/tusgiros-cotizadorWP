@@ -164,7 +164,8 @@ input[type=number]{
 }
 #select-ars,
 #select-vef,
-#select-cop {
+#select-cop,
+#select-usvef {
     width: 100% !important;
 }
 #select-uyu div {
@@ -188,6 +189,9 @@ input[type=number]{
 }
 #select-ecu div {
     background-image: url('https://tusgiros.io/wp-content/uploads/2023/02/ecuador.png');
+}
+#select-usvef div {
+    background-image: url('https://tusgiros.io/wp-content/uploads/2023/02/venezuela.png');
 }
 @media (max-width: 943px) and (min-width: 894px) {
     #dest-region {
